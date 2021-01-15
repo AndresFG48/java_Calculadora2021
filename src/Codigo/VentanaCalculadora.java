@@ -419,7 +419,29 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        escribeNumeroEnPantalla("=");
+       
+        //El botón igual tiene que saber que operación se pulso,
+        // como ese valor se guardo en la variable operación, 
+        // monto in if para que dependiendo de ese valor se realice la operación.
+        
+        //Primero guardo lo que haya en la pantalla en una variable double.
+        double operando2 = Double.valueOf(Display.getText());
+        
+        //si la operación era la suma.
+        if (operacion.equals("+")) {
+            operando1 = operando1 + operando2;
+        }
+        
+        //Si la operación era la resta.
+        if (operacion.equals("-")) {
+            operando1 = operando1 - operando2;
+        }
+        
+        //Por ultimo, muestro el resultado de la operación por la pantalla.
+        Display.setText(String.valueOf(operando1));
+        
+        
+        
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -431,7 +453,8 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        escribeNumeroEnPantalla("-");
+               
+        operacionPulsada("-");
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
