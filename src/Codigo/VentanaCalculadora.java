@@ -13,7 +13,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
 
     // Aqui van las variables de instancia.
     double operando1 = 0; //Almacena el primer número.
-    String operación =""; //Almacena la operación marcada.
+    String operacion =""; //Almacena la operación marcada.
     
     
     /**
@@ -29,6 +29,20 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         
     }
         else  Display.setText(Display.getText() + numero);
+    }
+    
+    //La funcion que se encarga de la operación pulsada.
+    public void operacionPulsada(String _operacion) {
+        
+        //Guardo el valor de la variable en el operando1
+        operando1 = Double.valueOf(Display.getText());
+        
+        //Pongo a cero la pantalla.
+        Display.setText("0");
+        
+        //Guardo la operación que he pulsado.
+        operacion = _operacion;
+        
     }
 
     /**
@@ -413,7 +427,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        escribeNumeroEnPantalla("+");
+        operacionPulsada("+");
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
