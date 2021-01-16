@@ -339,32 +339,38 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         //si la operación era la suma.
         if (operacion.equals("+")) {
             operando1 = operando1 + operando2;
+            
+            //Por ultimo, muestro el resultado de la operación por la pantalla.
+            Display.setText(String.valueOf(operando1));
         }
         
         //Si la operación era la resta.
         if (operacion.equals("-")) {
             operando1 = operando1 - operando2;
+            
+            //Por ultimo, muestro el resultado de la operación por la pantalla.
+            Display.setText(String.valueOf(operando1));
         }
         
         //Si la operación era la multiplicación.
         if (operacion.equals("*")) {
             operando1 = operando1 * operando2;
+            
+            //Por ultimo, muestro el resultado de la operación por la pantalla.
+            Display.setText(String.valueOf(operando1));
         }
         
         //Si la operación era la división.
-        if (operacion.equals("/")) {
+        if (operacion.equals("/") && operando2 != 0) {
             operando1 = operando1 / operando2;
+            
+            //Por ultimo, muestro el resultado de la operación por la pantalla.
+            Display.setText(String.valueOf(operando1));
         }
-        
-      
-        
-        
-        
-        //Por ultimo, muestro el resultado de la operación por la pantalla.
-        Display.setText(String.valueOf(operando1));
-        
-        
-        
+        else if (operacion.equals("/") && operando2 == 0){
+            Display.setText("error");
+        }
+    
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
